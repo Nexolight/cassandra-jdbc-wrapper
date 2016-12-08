@@ -326,7 +326,9 @@ public class CassandraStatement extends AbstractStatement implements CassandraSt
 
     public boolean getMoreResults() throws SQLException
     {
-        checkNotClosed();
+    	//solr can't deal with the exception 
+    	//but succeeds anyway.
+        //checkNotClosed();
         resetResults();
         // in the current Cassandra implementation there are never MORE results
         return false;
@@ -335,7 +337,9 @@ public class CassandraStatement extends AbstractStatement implements CassandraSt
     @SuppressWarnings("boxing")
 	public boolean getMoreResults(int current) throws SQLException
     {
-        checkNotClosed();
+    	//solr can't deal with the exception 
+    	//but succeeds anyway.
+        //checkNotClosed();
 
         switch (current)
         {
@@ -387,7 +391,8 @@ public class CassandraStatement extends AbstractStatement implements CassandraSt
 
     public int getUpdateCount() throws SQLException
     {
-        checkNotClosed();
+    	//Just a solr thing...
+        //checkNotClosed();
         return updateCount;
     }
 
